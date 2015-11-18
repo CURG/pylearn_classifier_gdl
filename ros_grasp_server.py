@@ -18,7 +18,7 @@ def init_save_file(input_data_file, input_model_file):
 
     if os.path.exists(dataset_filepath):
         os.remove(dataset_filepath)
-
+    print "dset-filepath = %s" % dataset_filepath
     save_dset = h5py.File(dataset_filepath)
 
     return save_dset, dataset_filepath
@@ -30,7 +30,8 @@ def init_rgbd_file(dataset_file):
 
     if os.path.exists(raw_rgbd_filepath):
         os.remove(raw_rgbd_filepath)
-
+    
+    print "raw-filepath = %s" % raw_rgbd_filepath
     input_dset = h5py.File(raw_rgbd_filepath)
 
     return input_dset, raw_rgbd_filepath
